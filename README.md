@@ -6,4 +6,4 @@ Perhaps the greatest RC car project of all times.
 - Matthew Emile Nabih
 
 ## Project Supervisor 
-### Dr Mohamed Sobhy
+### Dr. Mohamed Sobhy
