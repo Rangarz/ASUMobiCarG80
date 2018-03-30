@@ -17,17 +17,18 @@ void Timer0_PC_PWMinit(void)
 	/* PC PWM Non-inverting Mode*/
 	SET_BIT(TCCR0,COM01);
 	CLEAR_BIT(TCCR0,COM00);
-	/*No prescalar selected*/
-	SET_BIT(TCCR0,CS00);
-	CLEAR_BIT(TCCR0,CS01);
+	/*Select prescalar=8*/
+	SET_BIT(TCCR0,CS01);
+	CLEAR_BIT(TCCR0,CS00);
 	CLEAR_BIT(TCCR0,CS02);
 	/*Setting pin OC0 to be output*/
 	SET_BIT(DDRB,PB3);
 }
-void set_dutyCycle_Timer0(uint8 duty_cycle)
+void set_speed_ML(float32 duty_cycle) //set_dutyCycle_Timer0 // takes decimal
 {
-	OCR0 = (uint8)  ( (duty_cycle/100.0) *255.0 + 0.5);
+	OCR0 = (uint8)  ( (duty_cycle) *255.0 + 0.5);
 }
+
 
 
 

@@ -13,6 +13,6 @@
 #include "MACROS.h"
 
 void Timer0_PC_PWMinit(void); //phase correct pwm initialization
-void set_dutyCycle_Timer0(uint8 duty_cycle); //duty cycle to be used (in percentage)
+void set_speed_ML(float32 duty_cycle); //duty cycle to be used (in percentage)
 
 #endif /* TIMER0_H_*/
