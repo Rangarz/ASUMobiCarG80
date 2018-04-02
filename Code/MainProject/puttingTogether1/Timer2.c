@@ -20,12 +20,12 @@ void Timer2_PC_PWMinit(void)
 	SET_BIT(TCCR2,CS21);
 	CLEAR_BIT(TCCR2,CS22);
 	CLEAR_BIT(TCCR2,CS20);
-	/*Setting pin OC2 to be output*/
+	/*Setting pin OC2 to be input*/
 	SET_BIT(DDRD, PD7);
 }
-void set_speed_MR(float32 duty_cycle) //set_dutyCycle_Timer2 // takes decimal
+void set_speed_MR(uint8 duty_cycle) //set_dutyCycle_Timer2 // takes decimal
 {
-	OCR2 = (uint8)  ( (duty_cycle) *255.0 + 0.5);
+	OCR2 = (uint8)  ( (duty_cycle/100.0) *255.0 + 0.5);
 }
 
 

@@ -7,8 +7,11 @@
 
 #include "puttingTogether1.h"
 
+
+
 void Forward(float32 speed)
 {
+	
 	set_speed_ML(speed);
 	set_speed_MR(speed);
 	set_direction_ML(CW);
@@ -23,31 +26,39 @@ void Backward(float32 speed)
 }
 void ForwardRight(float32 speed)
 {
+	/*
 	set_speed_ML(speed);
 	set_speed_MR(0.5*speed);
 	set_direction_ML(CW);
 	set_direction_MR(CW);
+	*/
 }
 void ForwardLeft(float32 speed)
 {
+	/*
 	set_speed_MR(speed);
 	set_speed_ML(speed*0.5);
 	set_direction_MR(CW);
 	set_direction_ML(CW);
+	*/
 }
 void BackwardRight(float32 speed)
 {
+	/*
 	set_speed_ML(speed);
 	set_speed_MR(0.5*speed);
 	set_direction_ML(ACW);
 	set_direction_MR(ACW);
+	*/
 }
 void BackwardLeft(float32 speed)
 {
+	/*
 	set_speed_MR(speed);
 	set_speed_ML(speed*0.5);
 	set_direction_MR(ACW);
 	set_direction_ML(ACW);
+	*/
 }
 void RotateInPlace (float32 speed, uint8 direction)
 {
@@ -58,8 +69,19 @@ void RotateInPlace (float32 speed, uint8 direction)
 }
 void Break()
 {
+	/*
 	set_speed_ML(0);
+	set_speed_MR(0);
 	set_direction_MR(0);
+	set_direction_ML(0);
+	*/
+	
+	/*
+	CLEAR_BIT(PORTB, PB3);
+	CLEAR_BIT(PORTD, PD7);
+	*/
+	
+	TOGGLE_BIT(PORTA, PA4);
 }
 
 
@@ -67,32 +89,36 @@ int main(void)
 {
 	/*Adjust char size please*/
 	init();
-    while(1)
-    {
+	//
+	CLEAR_BIT(DDRA,PA4);
+	 
+	while(1)
+	{				
 		uint8 cmd = receive();
+		
 		switch(cmd)
 		{
 			case FORWARD:
-				Forward(1);
+				Forward(100);
 				break;
 			case BACK:
-				Backward(1);
+				Backward(100);
 				break;
 			case FORWARDLEFT:
-				ForwardLeft(1);
+				ForwardLeft(100);
 				break;
 			case FORWARDRIGHT:
-				ForwardRight(1);
+				ForwardRight(100);
 				break;
 			case BACKLEFT:
-				BackwardLeft(1);
+				BackwardLeft(100);
 				break;
 			case BACKRIGHT:
-				BackwardRight(1);
+				BackwardRight(100);
 				break;
-			case STOP:
+				
+			default:
 				Break();
-				break;
 		}
 		
     }
@@ -100,7 +126,8 @@ int main(void)
 
 void init()
 {
-	USART_init(USART_BAUDRATE);
+	USART_init();
 	Timer0_PC_PWMinit();
+	Timer2_PC_PWMinit();
 	driver_init();	
 }

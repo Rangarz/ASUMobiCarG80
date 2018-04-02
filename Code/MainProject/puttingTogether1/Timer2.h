@@ -14,7 +14,7 @@
 #include "MACROS.h"
 
 void Timer2_PC_PWMinit(void); //phase correct pwm initialization
-void set_speed_MR(float32 duty_cycle); //duty cycle to be used (0->1) /*Outputs on PD7*/ 
+void set_speed_MR(uint8 duty_cycle); //duty cycle to be used (0->1) /*Outputs on PD7*/ 
 // the right motor --> PD7
 
 

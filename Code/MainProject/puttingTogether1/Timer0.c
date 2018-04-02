@@ -21,12 +21,12 @@ void Timer0_PC_PWMinit(void)
 	SET_BIT(TCCR0,CS01);
 	CLEAR_BIT(TCCR0,CS00);
 	CLEAR_BIT(TCCR0,CS02);
-	/*Setting pin OC0 to be output*/
+	/*Setting pin OC0 to be input*/
 	SET_BIT(DDRB,PB3);
 }
-void set_speed_ML(float32 duty_cycle) //set_dutyCycle_Timer0 // takes decimal
+void set_speed_ML(uint8 duty_cycle) //set_dutyCycle_Timer0 // takes decimal
 {
-	OCR0 = (uint8)  ( (duty_cycle) *255.0 + 0.5);
+	OCR0 = (uint8)  ( (duty_cycle/100.0) *255.0 + 0.5);
 }
 
 

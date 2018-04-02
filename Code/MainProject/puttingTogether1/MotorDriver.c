@@ -18,25 +18,26 @@ void set_direction_ML(uint8 direction)
 {
 	if(direction == CW)
 	{
-		CLEAR_BIT(DDRA, ML_IN1);
-		SET_BIT(DDRA, ML_IN2);
+		CLEAR_BIT(PORTA, ML_IN1);
+		SET_BIT(PORTA, ML_IN2);
 	}
-	else
+	else if (direction == ACW)
 	{
-		SET_BIT(DDRA, ML_IN1);
-		CLEAR_BIT(DDRA, ML_IN2);
+		SET_BIT(PORTA, ML_IN1);
+		CLEAR_BIT(PORTA, ML_IN2);
 	} 
 }
 void set_direction_MR(uint8 direction)
 {
 	if(direction == CW)
 	{
-		CLEAR_BIT(DDRA, MR_IN1);
-		SET_BIT(DDRA, MR_IN2);
+		CLEAR_BIT(PORTA, MR_IN1);
+		SET_BIT(PORTA, MR_IN2);
 	}
-	else
+	else if (direction == ACW)
 	{
-		SET_BIT(DDRA, MR_IN1);
-		CLEAR_BIT(DDRA, MR_IN2);
+		
+		SET_BIT(PORTA, MR_IN1);
+		CLEAR_BIT(PORTA, MR_IN2);
 	}
 }

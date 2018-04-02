@@ -21,9 +21,9 @@ void USART_init()
 	SET_BIT(UCSRC,UCSZ0);	
 	SET_BIT(UCSRC,UCSZ1);
 	/* Load lower 8-bits of the baud rate */
-	UBRRL = BAUD_PRESCALE;	
+	UBRRL = (uint8)BAUD_PRESCALE;	
 	/* Load upper 8-bits*/
-	UBRRH = (BAUD_PRESCALE >> 8);
+	UBRRH = (uint8)(BAUD_PRESCALE >> 8);
 }
 
 uint8 receive()
