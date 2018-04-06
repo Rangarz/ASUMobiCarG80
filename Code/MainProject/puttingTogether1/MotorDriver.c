@@ -9,10 +9,10 @@
 
 void driver_init()
 {
-	CLEAR_BIT(DDRA,ML_IN1);
-	CLEAR_BIT(DDRA,ML_IN2);
-	CLEAR_BIT(DDRA,MR_IN1);
-	CLEAR_BIT(DDRA,MR_IN2);
+	SET_BIT(DDRA,ML_IN1);
+	SET_BIT(DDRA,ML_IN2);
+	SET_BIT(DDRA,MR_IN1);
+	SET_BIT(DDRA,MR_IN2);
 }
 void set_direction_ML(uint8 direction)
 {

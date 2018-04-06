@@ -26,39 +26,39 @@ void Backward(float32 speed)
 }
 void ForwardRight(float32 speed)
 {
-	/*
+	
 	set_speed_ML(speed);
 	set_speed_MR(0.5*speed);
 	set_direction_ML(CW);
 	set_direction_MR(CW);
-	*/
+	
 }
 void ForwardLeft(float32 speed)
 {
-	/*
+	
 	set_speed_MR(speed);
 	set_speed_ML(speed*0.5);
 	set_direction_MR(CW);
 	set_direction_ML(CW);
-	*/
+	
 }
 void BackwardRight(float32 speed)
 {
-	/*
+	
 	set_speed_ML(speed);
 	set_speed_MR(0.5*speed);
 	set_direction_ML(ACW);
 	set_direction_MR(ACW);
-	*/
+	
 }
 void BackwardLeft(float32 speed)
 {
-	/*
+	
 	set_speed_MR(speed);
 	set_speed_ML(speed*0.5);
 	set_direction_MR(ACW);
 	set_direction_ML(ACW);
-	*/
+
 }
 void RotateInPlace (float32 speed, uint8 direction)
 {
@@ -90,7 +90,7 @@ int main(void)
 	/*Adjust char size please*/
 	init();
 	//
-	CLEAR_BIT(DDRA,PA4);
+	SET_BIT(DDRA,PA4);
 	 
 	while(1)
 	{				
