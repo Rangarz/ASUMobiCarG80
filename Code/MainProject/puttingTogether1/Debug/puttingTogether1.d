@@ -15,8 +15,8 @@ puttingTogether1.d puttingTogether1.o: .././puttingTogether1.c \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\math.h \
- .././STD_TYPES.h .././Timer0.h .././Timer2.h .././USART.h \
- .././Commands.h .././MotorDriver.h
+ .././STD_TYPES.h .././Timer0.h .././Timer2.h .././USART_AVR.h \
+ .././Commands.h .././MotorDriver.h .././SteeringMech.h
 
 .././puttingTogether1.h:
 
@@ -58,8 +58,10 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-g
 
 .././Timer2.h:
 
-.././USART.h:
+.././USART_AVR.h:
 
 .././Commands.h:
 
 .././MotorDriver.h:
+
+.././SteeringMech.h:

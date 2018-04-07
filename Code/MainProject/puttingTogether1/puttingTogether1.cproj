@@ -131,6 +131,12 @@
     <Compile Include="STD_TYPES.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="SteeringMech.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="SteeringMech.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Timer0.c">
       <SubType>compile</SubType>
     </Compile>
@@ -143,10 +149,10 @@
     <Compile Include="Timer2.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="USART.c">
+    <Compile Include="USART_AVR.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="USART.h">
+    <Compile Include="USART_AVR.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

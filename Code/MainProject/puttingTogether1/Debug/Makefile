@@ -39,9 +39,10 @@ SUBDIRS :=
 C_SRCS +=  \
 ../MotorDriver.c \
 ../puttingTogether1.c \
+../SteeringMech.c \
 ../Timer0.c \
 ../Timer2.c \
-../USART.c
+../USART_AVR.c
 
 
 PREPROCESSING_SRCS += 
@@ -53,30 +54,34 @@ ASM_SRCS +=
 OBJS +=  \
 MotorDriver.o \
 puttingTogether1.o \
+SteeringMech.o \
 Timer0.o \
 Timer2.o \
-USART.o
+USART_AVR.o
 
 OBJS_AS_ARGS +=  \
 MotorDriver.o \
 puttingTogether1.o \
+SteeringMech.o \
 Timer0.o \
 Timer2.o \
-USART.o
+USART_AVR.o
 
 C_DEPS +=  \
 MotorDriver.d \
 puttingTogether1.d \
+SteeringMech.d \
 Timer0.d \
 Timer2.d \
-USART.d
+USART_AVR.d
 
 C_DEPS_AS_ARGS +=  \
 MotorDriver.d \
 puttingTogether1.d \
+SteeringMech.d \
 Timer0.d \
 Timer2.d \
-USART.d
+USART_AVR.d
 
 OUTPUT_FILE_PATH +=puttingTogether1.elf
 
@@ -92,6 +97,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

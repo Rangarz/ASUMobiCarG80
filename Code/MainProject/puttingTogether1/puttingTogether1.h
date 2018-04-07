@@ -15,9 +15,10 @@
 #include "STD_TYPES.h"
 #include "Timer0.h"
 #include "Timer2.h"
-#include "USART.h"
+#include "USART_AVR.h"
 #include "Commands.h"
 #include "MotorDriver.h"
+#include "SteeringMech.h"
 
 void init();
 

@@ -1,4 +1,5 @@
-Timer0.d Timer0.o: .././Timer0.c .././Timer0.h .././MICROCONFIG.h \
+USART_AVR.d USART_AVR.o: .././USART_AVR.c .././USART_AVR.h \
+ .././MICROCONFIG.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -15,7 +16,7 @@ Timer0.d Timer0.o: .././Timer0.c .././Timer0.h .././MICROCONFIG.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\math.h \
  .././STD_TYPES.h .././MACROS.h
 
-.././Timer0.h:
+.././USART_AVR.h:
 
 .././MICROCONFIG.h:
 
