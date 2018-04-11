@@ -11,6 +11,7 @@
 int main(void)
 {
 	init();
+	SET_BIT(DDRA,PA4);
 	while(1)
 	{
 		uint8 cmd = UART_receive();

@@ -26,7 +26,7 @@ void Timer0_PC_PWMinit(void)
 }
 void set_speed_ML(uint8 duty_cycle) //set_dutyCycle_Timer0 // takes decimal
 {
-	OCR0 = (uint8)  ( (duty_cycle/100.0) *255.0 + 0.5);
+	OCR0 = (uint8)  ((duty_cycle/100.0) *255.0 + 0.5);
 }
 
 
