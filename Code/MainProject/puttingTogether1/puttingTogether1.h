@@ -19,7 +19,7 @@
 #include "Commands.h"
 #include "MotorDriver.h"
 #include "SteeringMech.h"
-
+#include "LineFollower.h"
 void init();
 
 #endif /* PUTTINGTOGETHER1_H_ */

@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+LineFollower.c
+
 MotorDriver.c
 
 puttingTogether1.c

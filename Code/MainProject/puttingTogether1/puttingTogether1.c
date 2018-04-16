@@ -11,34 +11,97 @@
 int main(void)
 {
 	init();
-	SET_BIT(DDRA,PA4);
+	SET_BIT(DDRA,PA5);  //sets PA4 as output
+	
+	//
+	CLEAR_BIT(DDRD, PD6);
+	CLEAR_BIT(DDRD, PD5);
+	CLEAR_BIT(DDRD, PD4);
+	volatile uint8 currState;
+	volatile float32 turnLeftSpeed = 0.55;
+	volatile float32 turnRightSpeed = 0.55;	
+	//
 	while(1)
-	{
+	{	
+		//PD4 = right
+		//PD5 = mid
+		//PD6 = left
+		
+		
+		//Line follower mode code starts here
+		
+		if(IS_BIT_CLEAR(PIND, PD5) && IS_BIT_SET(PIND, PD4) && IS_BIT_SET(PIND, PD6))
+		{
+			currState = FORWARD;
+			Forward(70);
+		}
+		//Left on, right off
+		else if(IS_BIT_CLEAR(PIND, PD6) && IS_BIT_SET(PIND, PD4))
+		{
+			if(currState != FORWARDLEFT)
+			{
+				currState = FORWARDLEFT;
+				turnLeftSpeed = 0.5;
+			}
+			ForwardLeftLF(70, turnLeftSpeed);
+			if(turnLeftSpeed > 0.3)
+			{
+				turnLeftSpeed -= 0.05; 
+			}
+		}
+		else if(IS_BIT_SET(PIND, PD6) && IS_BIT_CLEAR(PIND, PD4))
+		{
+			if(currState != FORWARDRIGHT)
+			{
+				currState = FORWARDRIGHT;
+				turnRightSpeed = 0.5;
+			}
+			ForwardRightLF(70, turnRightSpeed);
+			if(turnRightSpeed > 0.3)
+			{
+				turnRightSpeed -= 0.05;
+			}
+		}
+		
+		else if(IS_BIT_SET(PIND, PD6) && IS_BIT_SET(PIND, PD5) && IS_BIT_SET(PIND, PD4))
+		{
+			Break();
+		}
+		else
+		{
+			 Break();
+		}
+		
+		//Remote control mode code starts here
+		
+		/*
+		 
 		uint8 cmd = UART_receive();
 		switch(cmd)
 		{
 			case FORWARD:
-			Forward(100);
+			Forward(90);
 			break;
 			case BACK:
-			Backward(100);
+			Backward(90);
 			break;
 			case FORWARDLEFT:
-			ForwardLeft(100);
+			ForwardLeft(90);
 			break;
 			case FORWARDRIGHT:
-			ForwardRight(100);
+			ForwardRight(90);
 			break;
 			case BACKLEFT:
-			BackwardLeft(100);
+			BackwardLeft(90);
 			break;
 			case BACKRIGHT:
-			BackwardRight(100);
+			BackwardRight(90);
 			break;
 			case STOP:
 			Break();
 			break;
 		}
+		*/
 		
 	}
 }

@@ -9,15 +9,14 @@
 
 void Forward(float32 speed)
 {
-	
 	set_speed_ML(speed);
 	set_speed_MR(speed);
 	set_direction_ML(CW);
-	set_direction_MR(CW);	
+	set_direction_MR(CW);
 }
 void Backward(float32 speed)
 {
-	set_speed_ML(speed*0.1);
+	set_speed_ML(speed);
 	set_speed_MR(speed);
 	set_direction_ML(ACW);
 	set_direction_MR(ACW);
@@ -79,7 +78,6 @@ void Break()
 	CLEAR_BIT(PORTD, PD7);
 	*/
 	
-	TOGGLE_BIT(PORTA, PA4);
 }
 
 

@@ -110,6 +110,12 @@
     <Compile Include="Commands.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="LineFollower.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LineFollower.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MACROS.h">
       <SubType>compile</SubType>
     </Compile>

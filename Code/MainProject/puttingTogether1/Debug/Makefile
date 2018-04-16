@@ -37,6 +37,7 @@ SUBDIRS :=
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../LineFollower.c \
 ../MotorDriver.c \
 ../puttingTogether1.c \
 ../SteeringMech.c \
@@ -52,6 +53,7 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+LineFollower.o \
 MotorDriver.o \
 puttingTogether1.o \
 SteeringMech.o \
@@ -60,6 +62,7 @@ Timer2.o \
 USART_AVR.o
 
 OBJS_AS_ARGS +=  \
+LineFollower.o \
 MotorDriver.o \
 puttingTogether1.o \
 SteeringMech.o \
@@ -68,6 +71,7 @@ Timer2.o \
 USART_AVR.o
 
 C_DEPS +=  \
+LineFollower.d \
 MotorDriver.d \
 puttingTogether1.d \
 SteeringMech.d \
@@ -76,6 +80,7 @@ Timer2.d \
 USART_AVR.d
 
 C_DEPS_AS_ARGS +=  \
+LineFollower.d \
 MotorDriver.d \
 puttingTogether1.d \
 SteeringMech.d \
@@ -97,6 +102,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 
