@@ -14,22 +14,61 @@ int main(void)
 	SET_BIT(DDRA,PA5);  //sets PA4 as output
 	
 	//
-	CLEAR_BIT(DDRD, PD6);
-	CLEAR_BIT(DDRD, PD5);
+	CLEAR_BIT(DDRD, PD6); 
+	CLEAR_BIT(DDRD, PD5); //PD5 INPUT
 	CLEAR_BIT(DDRD, PD4);
-	volatile uint8 currState;
-	volatile float32 turnLeftSpeed = 0.55;
-	volatile float32 turnRightSpeed = 0.55;	
+	
+	volatile uint8 currState=FORWARD;
+	volatile float32 speedNow=30,degreeNow=0.1;
+	
 	//
+	   
 	while(1)
 	{	
 		//PD4 = right
 		//PD5 = mid
 		//PD6 = left
 		
+		//REAL line follower mode code starts here
+		if(((IS_BIT_CLEAR(PIND, right))&&( IS_BIT_CLEAR(PIND, left))&&(IS_BIT_CLEAR(PIND, mid)))/*||((IS_BIT_SET(PIND, right))&&(IS_BIT_SET(PIND, left))&&(IS_BIT_SET(PIND, mid)))*/||((IS_BIT_CLEAR(PIND, mid))&&(IS_BIT_SET(PIND, right))&&(IS_BIT_SET(PIND, left))))
+		{
+			currState= FORWARD;
+			Forward(speedNow);
+		}
+		if(((IS_BIT_CLEAR(PIND, mid))&&(IS_BIT_CLEAR(PIND, left))&&(IS_BIT_SET(PIND, right))) || ((IS_BIT_SET(PIND, mid))&&(IS_BIT_CLEAR(PIND, left))&&(IS_BIT_SET(PIND, right))))
+		{
+			currState= FORWARDLEFT;
+			ForwardLeftLF(speedNow,degreeNow);
+		}
+		if(((IS_BIT_CLEAR(PIND, mid))&&(IS_BIT_CLEAR(PIND, right))&&(IS_BIT_SET(PIND, left))) || ((IS_BIT_SET(PIND, mid))&&(IS_BIT_CLEAR(PIND, right))&&(IS_BIT_SET(PIND, left))))	
+		{
+			currState= FORWARDRIGHT;
+			ForwardRightLF(speedNow,degreeNow);
+		}
+		if(IS_BIT_SET(PIND, mid) && IS_BIT_CLEAR(PIND, right) && IS_BIT_CLEAR(PIND, left))
+		{
+			Break();
+		}
+		if((IS_BIT_SET(PIND, right))&&(IS_BIT_SET(PIND, left))&&(IS_BIT_SET(PIND, mid)))
+		{
+			if(currState==FORWARD)
+			{
+				Forward(speedNow);
+			}
+			if(currState==FORWARDLEFT)
+			{
+				ForwardLeftLF(speedNow,degreeNow);
+			}
+			if(currState==FORWARDRIGHT)
+			{
+				ForwardRightLF(speedNow,degreeNow);
+			}
+		}
+		//REAL END
+		
 		
 		//Line follower mode code starts here
-		
+		/*
 		if(IS_BIT_CLEAR(PIND, PD5) && IS_BIT_SET(PIND, PD4) && IS_BIT_SET(PIND, PD6))
 		{
 			currState = FORWARD;
@@ -71,11 +110,12 @@ int main(void)
 		{
 			 Break();
 		}
+		*/
 		
 		//Remote control mode code starts here
 		
-		/*
-		 
+		
+	/*	 
 		uint8 cmd = UART_receive();
 		switch(cmd)
 		{
