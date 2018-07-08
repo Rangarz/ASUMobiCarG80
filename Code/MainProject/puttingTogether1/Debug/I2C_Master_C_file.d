@@ -1,5 +1,5 @@
-MotorDriver.d MotorDriver.o: .././MotorDriver.c .././MotorDriver.h \
- .././STD_TYPES.h .././MACROS.h .././MICROCONFIG.h \
+I2C_Master_C_file.d I2C_Master_C_file.o: .././I2C_Master_C_file.c \
+ .././I2C_Master_H_file.h .././MICROCONFIG.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -19,11 +19,7 @@ MotorDriver.d MotorDriver.o: .././MotorDriver.c .././MotorDriver.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\avr\include\stdio.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\avr8\ gcc\native\3.4.1061\avr8-gnu-toolchain\lib\gcc\avr\4.8.1\include\stdarg.h
 
-.././MotorDriver.h:
-
-.././STD_TYPES.h:
-
-.././MACROS.h:
+.././I2C_Master_H_file.h:
 
 .././MICROCONFIG.h:
 

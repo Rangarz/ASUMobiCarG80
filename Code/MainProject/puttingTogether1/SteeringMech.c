@@ -30,11 +30,30 @@ void ForwardRight(float32 speed)
 	set_direction_MR(CW);
 	
 }
+void ForwardRightWithDegree(float32 speed, float32 degree)
+{
+	
+	set_speed_ML(speed);
+	//Degree 0->1
+	set_speed_MR(degree*speed);
+	set_direction_ML(CW);
+	set_direction_MR(CW);
+	
+}
 void ForwardLeft(float32 speed)
 {
 	
 	set_speed_MR(speed);
 	set_speed_ML(speed*0.5);
+	set_direction_MR(CW);
+	set_direction_ML(CW);
+
+}
+void ForwardLeftWithDegree(float32 speed, float32 degree)
+{
+	
+	set_speed_MR(speed);
+	set_speed_ML(speed*degree);
 	set_direction_MR(CW);
 	set_direction_ML(CW);
 
@@ -57,12 +76,12 @@ void BackwardLeft(float32 speed)
 	set_direction_ML(ACW);
 
 }
-void RotateInPlace (float32 speed, uint8 direction)
+void RotateInPlace (float32 speed, uint8 direction1, uint8 direction2)
 {
 	set_speed_ML(speed);
 	set_speed_MR(speed);
-	set_direction_ML(direction);
-	set_direction_MR(direction);
+	set_direction_ML(direction1);
+	set_direction_MR(direction2);
 }
 void Break()
 {

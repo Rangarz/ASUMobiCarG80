@@ -110,6 +110,12 @@
     <Compile Include="Commands.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="I2C_Master_C_file.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="I2C_Master_H_file.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="LineFollower.c">
       <SubType>compile</SubType>
     </Compile>
@@ -128,10 +134,13 @@
     <Compile Include="MotorDriver.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="puttingTogether1.c">
+    <Compile Include="MPU6050_res_define.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="puttingTogether1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="puttingTogether1.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="STD_TYPES.h">

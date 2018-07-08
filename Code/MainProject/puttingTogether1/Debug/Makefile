@@ -37,6 +37,7 @@ SUBDIRS :=
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../I2C_Master_C_file.c \
 ../LineFollower.c \
 ../MotorDriver.c \
 ../puttingTogether1.c \
@@ -53,6 +54,7 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+I2C_Master_C_file.o \
 LineFollower.o \
 MotorDriver.o \
 puttingTogether1.o \
@@ -62,6 +64,7 @@ Timer2.o \
 USART_AVR.o
 
 OBJS_AS_ARGS +=  \
+I2C_Master_C_file.o \
 LineFollower.o \
 MotorDriver.o \
 puttingTogether1.o \
@@ -71,6 +74,7 @@ Timer2.o \
 USART_AVR.o
 
 C_DEPS +=  \
+I2C_Master_C_file.d \
 LineFollower.d \
 MotorDriver.d \
 puttingTogether1.d \
@@ -80,6 +84,7 @@ Timer2.d \
 USART_AVR.d
 
 C_DEPS_AS_ARGS +=  \
+I2C_Master_C_file.d \
 LineFollower.d \
 MotorDriver.d \
 puttingTogether1.d \
@@ -102,6 +107,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

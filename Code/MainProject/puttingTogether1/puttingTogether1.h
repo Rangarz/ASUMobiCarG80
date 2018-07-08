@@ -10,6 +10,7 @@
 #define PUTTINGTOGETHER1_H_
 
 #include <avr/io.h>
+#include <math.h>
 #include "MACROS.h"
 #include "MICROCONFIG.h"
 #include "STD_TYPES.h"
@@ -20,6 +21,9 @@
 #include "MotorDriver.h"
 #include "SteeringMech.h"
 #include "LineFollower.h"
+#include "MPU6050_res_define.h"							/* Include MPU6050 register define file */
+#include "I2C_Master_H_file.h"							/* Include I2C Master header file */
+
 void init();
 
 #endif /* PUTTINGTOGETHER1_H_ */

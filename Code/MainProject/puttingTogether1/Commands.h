@@ -19,4 +19,6 @@
 #define BACKRIGHT 'J'
 #define STOP 'S'
 #define OFF 'D'
+#define BLACK 0
+#define WHITE 1
 #endif /* INCFILE1_H_ */

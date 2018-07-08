@@ -23,10 +23,12 @@
 void Forward(float32 speed);
 void Backward(float32 speed);
 void ForwardRight(float32 speed);
+void ForwardRightWithDegree(float32 speed, float32 degree);
+void ForwardLeftWithDegree(float32 speed, float32 degree);
 void ForwardLeft(float32 speed);
 void BackwardRight(float32 speed);
 void BackwardLeft(float32 speed);
-void RotateInPlace (float32 speed, uint8 direction);
+void RotateInPlace (float32 speed, uint8 direction1, uint8 direction2);
 void Break();
 
 
